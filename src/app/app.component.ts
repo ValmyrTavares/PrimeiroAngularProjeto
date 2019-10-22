@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Alura';
+
+
 }
+
+
+
+// constructor(http: HttpClient) {
+//   http
+//     .get<Object[]>('http://localhost:3000/flavio/photos')
+//     .subscribe(result => {
+//       this.photos = result
+//     });
+
+// }
