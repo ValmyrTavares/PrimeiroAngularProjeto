@@ -11,6 +11,7 @@ import { Subject } from 'rxjs';
 export class SearchComponent implements OnInit, OnDestroy {
 
   @Output() onTyping = new EventEmitter<string>();
+  @Input() value: string = ""
 
   debounce: Subject<string> = new Subject<string>();
 
@@ -19,7 +20,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     this.debounce.pipe(debounceTime(300))
-      .subscribe(filter => console.log(filter));
+      .subscribe(filter => this.onTyping.emit(filter));
 
   }
 
